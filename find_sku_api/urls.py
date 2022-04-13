@@ -20,5 +20,5 @@ from find_sku_api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('find_same_sku/', views.find_same_sku),
-    path('find_similary_sku/', views.find_similary_sku),
+    path('find_similary_sku', views.find_similary_sku),
 ]
