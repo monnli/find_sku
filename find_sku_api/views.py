@@ -3,9 +3,21 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.http import JsonResponse
-from config import tidb_conn
 import pandas as pd
+import pymysql
 import json
+
+
+def tidb_conn():
+    conn = pymysql.connect(
+        host='172.31.141.244',
+        port=31545,
+        user='similarity',
+        password='ye6Iep8S',
+        db='voila_similarity'
+    )
+    cursor = conn.cursor()
+    return cursor, conn
 
 
 def find_same_sku(request):
